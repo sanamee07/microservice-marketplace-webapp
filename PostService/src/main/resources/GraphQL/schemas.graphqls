@@ -1,0 +1,19 @@
+type Query {
+  # Fetch all posts for a specific user and advertisement
+  getAllPostsByUserId(userId: ID!, advertisementId: ID!): [Post!]!
+}
+
+type Mutation {
+  # Create a new post
+  createPost(userId: ID!, advertisementId: ID!, platform: String!, link: String!): Post!
+  
+}
+
+# Definition of the Post model
+type Post {
+  postId: ID!
+  userId: ID!
+  advertisementId: ID!
+  platform: String!
+  link: String!
+}
